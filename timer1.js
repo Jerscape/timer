@@ -1,8 +1,8 @@
 const arguments = process.argv;
 
-
 for(let interval of arguments){
-  if(typeof interval === "number"){
+  //this if seems to be screeningout all three edge cases not just negative numbers
+  if(interval > 0){
     interval = interval * 1000
     setTimeout(() => {
       process.stdout.write('\x07')
@@ -11,7 +11,3 @@ for(let interval of arguments){
 
 }
 
-//convert arguments x 1000
-
-
-//process.stdout.write('\x07')
